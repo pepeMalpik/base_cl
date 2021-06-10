@@ -19,7 +19,7 @@ class EmptyPage extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Text(
-            Strings.emptyTitle,
+            Strings.empty_title,
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,

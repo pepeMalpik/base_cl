@@ -6,7 +6,7 @@ class APIPathHelper {
       case APIPath.fetch_album:
         return "/albums/1";
       case APIPath.fetch_todos:
-        return "/todossss";
+        return "/todos";
       default:
         return "";
     }

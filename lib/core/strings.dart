@@ -1,4 +1,4 @@
 class Strings {
-  static final errorTitle = 'Error !';
-  static final emptyTitle = 'Vista vacia';
+  static const error_title = 'Error !';
+  static const empty_title = 'Vista vacia';
 }

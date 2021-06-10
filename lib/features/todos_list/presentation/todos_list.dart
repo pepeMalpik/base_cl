@@ -1,6 +1,9 @@
 import 'package:fetch_todos/core/data/api_response.dart';
+import 'package:fetch_todos/core/routing/app_routes.dart';
 import 'package:fetch_todos/core/widgets/empty_page.dart';
 import 'package:fetch_todos/core/widgets/error_page.dart';
+import 'package:fetch_todos/core/widgets/loading_page.dart';
+import 'package:fetch_todos/features/todo_create/todo_create.dart';
 import 'package:fetch_todos/features/todos_list/presentation/providers/todos_list_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,7 +15,20 @@ class TodosList extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<TodoListProvider>(context);
     return Scaffold(
-      body: _renderView(provider: provider),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              icon: Icon(Icons.next_plan_outlined),
+              onPressed: () =>
+                  Navigator.pushNamed(context, AppRoutes.todo_create)),
+        ],
+      ),
+      body: Stack(
+        children: [
+          _renderView(provider: provider),
+          LoadingPage(),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           provider.fetchTodos();

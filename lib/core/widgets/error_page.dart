@@ -20,7 +20,7 @@ class ErrorPage extends StatelessWidget {
           ),
           SizedBox(height: 20),
           Text(
-            Strings.errorTitle,
+            Strings.error_title,
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.bold,
